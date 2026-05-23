@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   Ryan Sullivan Portfolio — JS
+   Portfolio — JS
    Scroll animations, hamburger menu, counter animation
 ════════════════════════════════════════════════════════ */
 
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Grow on hovering links/buttons
-    document.querySelectorAll('a, button, .work-card, .social-btn').forEach(el => {
+    document.querySelectorAll('a, button, .work-card, .exp-card, .social-btn').forEach(el => {
       el.addEventListener('mouseenter', () => {
         cursor.style.width = '18px';
         cursor.style.height = '18px';
