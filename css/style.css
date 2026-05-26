@@ -541,7 +541,8 @@ img { display: block; max-width: 100%; }
   position: relative;
 }
 .work-card--large {
-  padding: 20px 20px 70px calc(58% + 20px);
+  --work-strip-width: 105px;
+  padding: 20px 8px 70px calc(100% - var(--work-strip-width) + 6px);
 }
 
 .work-tag-top {
@@ -583,7 +584,7 @@ img { display: block; max-width: 100%; }
   left: 0;
   top: 0;
   bottom: 0;
-  width: 58%;
+  width: calc(100% - var(--work-strip-width));
   overflow: hidden;
 }
 .work-art-right {
@@ -591,8 +592,12 @@ img { display: block; max-width: 100%; }
   right: 0;
   top: 0;
   bottom: 0;
-  width: 42%;
+  width: var(--work-strip-width);
+  background: var(--white);
   overflow: hidden;
+}
+.work-art-right .halftone-face-art {
+  display: none;
 }
 .halftone-face-art {
   width: 100%;
