@@ -236,7 +236,7 @@ img { display: block; max-width: 100%; }
 }
 .hero-image-wrap {
   width: 100%;
-  aspect-ratio: 0.82;
+  aspect-ratio: 0.92;
   overflow: hidden;
   position: relative;
 }
@@ -415,6 +415,13 @@ img { display: block; max-width: 100%; }
 }
 .btn--dark:hover { background: #222; }
 
+.btn--orange {
+  background: var(--orange);
+  border-color: var(--black);
+  color: var(--black);
+}
+.btn--orange:hover { background: var(--orange-light); }
+
 /* ═══════════════════════════
    SECTION HEADINGS
 ═══════════════════════════ */
@@ -517,6 +524,13 @@ img { display: block; max-width: 100%; }
 }
 
 /* Work 2 - large white */
+.work-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
 .work-card--white {
   background: var(--white);
   min-height: 220px;
@@ -526,21 +540,29 @@ img { display: block; max-width: 100%; }
   padding: 20px;
   position: relative;
 }
-.work-card--large { padding: 20px 20px 70px; }
+.work-card--large {
+  padding: 20px 20px 70px calc(58% + 20px);
+}
 
 .work-tag-top {
   display: inline-block;
   background: var(--orange);
   color: var(--black);
-  font-family: var(--font-pixel);
-  font-size: 11px;
-  padding: 4px 10px;
+  font-family: 'Pixelify Sans', cursive;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 12px;
   border: 1px solid var(--black);
   align-self: flex-start;
 }
 .work-tag--light {
   background: var(--white);
   color: var(--black);
+}
+.work-card--large .work-tag-top,
+.work-card--large .work-title-large {
+  position: relative;
+  z-index: 2;
 }
 
 .work-title-large {
@@ -558,10 +580,18 @@ img { display: block; max-width: 100%; }
 
 .work-thumb-right {
   position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 58%;
+  overflow: hidden;
+}
+.work-art-right {
+  position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
-  width: 45%;
+  width: 42%;
   overflow: hidden;
 }
 .halftone-face-art {
@@ -582,6 +612,22 @@ img { display: block; max-width: 100%; }
   position: absolute;
   bottom: 16px;
   right: 16px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+}
+.btn-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.work-card--large .work-explore-btn {
+  left: 16px;
+  right: auto;
+  z-index: 3;
 }
 
 /* Work 3 - light */
