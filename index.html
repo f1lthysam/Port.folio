@@ -320,5 +320,26 @@
   </div><!-- /page-bg -->
 
   <script src="js/main.js"></script>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="music/Elevator.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+const music = document.getElementById('bgMusic');
+music.volume = 0.2;
+
+const unlock = () => {
+  music.play().then(() => {
+    ['click', 'wheel', 'keydown', 'touchstart', 'touchmove', 'mousemove', 'mousedown'].forEach(e =>
+      document.removeEventListener(e, unlock)
+    );
+  }).catch(() => {});
+};
+
+['click', 'wheel', 'keydown', 'touchstart', 'touchmove', 'mousemove', 'mousedown'].forEach(e =>
+  document.addEventListener(e, unlock)
+);
+  </script>
 </body>
 </html>
